@@ -3,7 +3,7 @@ import sys
 from django.conf import settings
 
 DEBUG = os.environ.get('DEBUG', 'on') == 'on'
-SECRET_KEY = os.environ.get('SECRET_KEY', '{{ secret_key }}')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-l*y6tc_$w!13l_i2gw=qvpgu0(hcyydqjx)lcwat%b#+$-g-!9')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 
 settings.configure(
@@ -24,7 +24,7 @@ from django.core.wsgi import get_wsgi_application
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('Hello World!')
+    return HttpResponse('Hello World! This version is created from a template!')
 
 urlpatterns = (
     # url(r'^$', index), # deprecated
